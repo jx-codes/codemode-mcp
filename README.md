@@ -18,29 +18,54 @@ This implements the core insight that **LLMs are much better at writing code tha
 4. **Results flow back**: Through the code execution to the LLM
 
 This gives you all the benefits of complex tool orchestration, but leverages what LLMs are actually good at: writing code.
-
-## Installation & Setup
+## Installation
 
 ### Prerequisites
 
-- **Deno**: `curl -fsSL https://deno.land/x/install/install.sh | sh`
-- **Bun**: `curl -fsSL https://bun.sh/install | bash`
+- [Bun](https://bun.sh) (latest version)
+- [Deno](https://deno.land) (for code execution sandbox)
+- An MCP-compatible client (Claude Desktop, Cursor, VS Code with Copilot, etc.)
 
 ### Setup
 
-1. Install dependencies: `bun install`
-2. Configure your MCP client:
-   ```json
-   {
-     "mcpServers": {
-       "codemode": {
-         "command": "bun",
-         "args": ["run", "index.ts"],
+1. **Clone the repository**
+```bash
+git clone https://github.com/jx-codes/codemode-mcp.git
+cd codemode-mcp
+```
+
+2. **Install dependencies**
+```bash
+bun install
+```
+3. **Configure the server** (optional)
+
+Create a `codemode-config.json` file to customize settings:
+```json
+{
+   "proxyPort": 3001,
+   "configDirectories": [
+      "~/.config/mcp/servers",
+      "./mcp-servers",
+      "./"
+   ]
+}
+```
+
+4. **Set up your MCP servers**
+
+Create a `.mcp.json` file with your MCP server configurations in any of the directories you specified above:
+```json
+{
+   "mcpServers": {
+      "fs": {
+         "command": "npx",
+         "args": ["-y", "@modelcontextprotocol/server-filesystem", "/tmp"],
          "env": {}
-       }
-     }
+      }
    }
-   ```
+}
+```
 
 ## Example Workflows
 
