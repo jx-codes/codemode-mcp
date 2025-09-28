@@ -1,0 +1,54 @@
+{
+  "name": "codemode-mcp",
+  "version": "1.0.0",
+  "description": "A local implementation of the Code Mode workflow for Claude Code. LLMs write TypeScript/JavaScript code that calls a simple HTTP proxy to access your MCP servers.",
+  "type": "module",
+  "main": "index.ts",
+  "bin": {
+    "codemode-mcp-server": "./index.ts"
+  },
+  "scripts": {
+    "start": "bun run index.ts",
+    "typecheck": "bunx tsc --noEmit",
+    "dev": "bun run --watch index.ts"
+  },
+  "keywords": [
+    "mcp",
+    "server",
+    "typescript",
+    "code-mode",
+    "model-context-protocol",
+    "ai",
+    "llm",
+    "deno",
+    "proxy"
+  ],
+  "author": "Jesus Moreno <jm.codes9@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jx-codes/codemode-mcp.git"
+  },
+  "homepage": "https://github.com/jx-codes/codemode-mcp",
+  "bugs": {
+    "url": "https://github.com/jx-codes/codemode-mcp/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "index.ts",
+    "README.md",
+    "LICENSE",
+    "codemode-config.json"
+  ],
+  "devDependencies": {
+    "@types/bun": "latest",
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.18.2",
+    "@types/uuid": "^11.0.0",
+    "uuid": "^13.0.0"
+  }
+}

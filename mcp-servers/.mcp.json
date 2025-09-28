@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "duckdb": {
+      "command": "uvx",
+      "args": [
+        "mcp-server-duckdb",
+        "--db-path",
+        "~/mcp-server-duckdb/data/data.db"
+      ]
+    }
+  }
+}
