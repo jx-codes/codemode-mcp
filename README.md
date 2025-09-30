@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/jx-codes-codemode-mcp-badge.png)](https://mseep.ai/app/jx-codes-codemode-mcp)
+
 Also check out https://github.com/jx-codes/mcp-rpc for a more RPC / Typescript oriented approach. Write typescript functions that get exposed to the LLM as RPC calls, LLM scripts run in a secure Deno sandbox with only net access.
 
 https://github.com/jx-codes/mcp-rpc-runtime
